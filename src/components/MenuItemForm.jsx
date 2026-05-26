@@ -28,49 +28,61 @@ function MenuItemForm() {
     };
 
     console.log("MenuItemRequest DTO:", payload);
+
     alert("Menu item added. Check console.");
   };
 
   return (
-    <div>
-      <h2>Add Menu Item</h2>
+    <div className="min-h-screen bg-gray-100 p-6">
+      <div className="max-w-2xl mx-auto bg-white shadow-md rounded-xl p-8">
+        <h2 className="text-3xl font-bold text-gray-800 mb-6">Add Menu Item</h2>
 
-      <form onSubmit={handleSubmit}>
-        <input
-          name="restaurantId"
-          placeholder="Restaurant ID"
-          type="number"
-          value={formData.restaurantId}
-          onChange={handleChange}
-        />
-
-        <input
-          name="itemName"
-          placeholder="Item Name"
-          value={formData.itemName}
-          onChange={handleChange}
-        />
-
-        <input
-          name="price"
-          placeholder="Price"
-          type="number"
-          value={formData.price}
-          onChange={handleChange}
-        />
-
-        <label>
+        <form onSubmit={handleSubmit} className="flex flex-col gap-5">
           <input
-            name="available"
-            type="checkbox"
-            checked={formData.available}
+            className="border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-green-500"
+            name="restaurantId"
+            placeholder="Restaurant ID"
+            type="number"
+            value={formData.restaurantId}
             onChange={handleChange}
           />
-          Available
-        </label>
 
-        <button type="submit">Add Menu Item</button>
-      </form>
+          <input
+            className="border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-green-500"
+            name="itemName"
+            placeholder="Item Name"
+            value={formData.itemName}
+            onChange={handleChange}
+          />
+
+          <input
+            className="border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-green-500"
+            name="price"
+            placeholder="Price"
+            type="number"
+            value={formData.price}
+            onChange={handleChange}
+          />
+
+          <label className="flex items-center gap-3 text-gray-700 font-medium">
+            <input
+              className="w-5 h-5"
+              name="available"
+              type="checkbox"
+              checked={formData.available}
+              onChange={handleChange}
+            />
+            Available
+          </label>
+
+          <button
+            type="submit"
+            className="bg-green-600 hover:bg-green-700 text-white py-3 rounded-lg font-medium transition"
+          >
+            Add Menu Item
+          </button>
+        </form>
+      </div>
     </div>
   );
 }
