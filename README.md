@@ -11,7 +11,7 @@ This frontend application is a simplified SaaS-based restaurant onboarding and o
 
 The system supports three user experiences:
 
-```text
+```
 1. Super Admin / Onboarding Specialist
 2. Restaurant Owner
 3. Customer Ordering Website
